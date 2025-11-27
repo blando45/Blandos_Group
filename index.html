@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro-Futuristic Calculator</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <input id="view" value="" readonly>
+
+        <div class="keys-grid">
+
+            <input type="button" value="AC" onclick="clearView()">
+            <input type="button" value="+/-" onclick="toggleSign()">
+            <input type="button" value="%" onclick="insert('%')">
+            <input type="button" value="÷" class="operator" onclick="insert('/')">
+
+            <input type="button" value="7" onclick="insert('7')">
+            <input type="button" value="8" onclick="insert('8')">
+            <input type="button" value="9" onclick="insert('9')">
+            <input type="button" value="×" class="operator" onclick="insert('*')">
+
+            <input type="button" value="4" onclick="insert('4')">
+            <input type="button" value="5" onclick="insert('5')">
+            <input type="button" value="6" onclick="insert('6')">
+            <input type="button" value="-" class="operator" onclick="insert('-')">
+
+            <input type="button" value="1" onclick="insert('1')">
+            <input type="button" value="2" onclick="insert('2')">
+            <input type="button" value="3" onclick="insert('3')">
+            <input type="button" value="+" class="operator" onclick="insert('+')">
+
+            <input type="button" value="0" class="zero-key" onclick="insert('0')">
+            <input type="button" value="." onclick="insert('.')">
+            <input type="button" value="=" class="equals" onclick="calculate()">
+
+        </div>
+    </div>
+
+    <script>
+        const view = document.getElementById("view");
+        const maxDigits = 15;
+
+        function insert(val) {
+            if (view.value === "" && val !== ".") {
+                view.value = val;
+            } else {
+                view.value += val;
+            }
+            view.value = view.value.substring(0, maxDigits);
+        }
+
+        function calculate() {
+            try {
+                let result = eval(view.value);
+                if (!isFinite(result)) {
+                    view.value = "Error";
+                } else {
+                    view.value = String(result);
+                }
+            } catch {
+                view.value = "Error";
+            }
+        }
+
+        function clearView() {
+            view.value = "";
+        }
+
+    
+        function toggleSign() {
+            if (view.value === "" || view.value === "Error") return;
+
+            if (view.value.startsWith("-")) {
+                view.value = view.value.substring(1);
+            } else {
+                view.value = "-" + view.value;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
