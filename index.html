@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro-Futuristic Calculator</title>
+    <title>Calculator</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -14,8 +14,17 @@
 
 <body>
 
-    <div class="calculator">
+  
+    <div class="members" style="text-align:center; margin-bottom:20px; font-family:'Space Mono';">
+        <h2>Group Members</h2>
+        <p>• Dominic Abuso</p>
+        <p>• Vengin Chris Acibo</p>
+        <p>• Vincent Egos</p>
+        <p>• Ferdinand Blando Jr.</p>
+    </div>
 
+
+    <div class="calculator">
         <input id="view" value="" readonly>
 
         <div class="keys-grid">
@@ -77,7 +86,6 @@
             view.value = "";
         }
 
-    
         function toggleSign() {
             if (view.value === "" || view.value === "Error") return;
 
@@ -90,5 +98,4 @@
     </script>
 
 </body>
-
 </html>

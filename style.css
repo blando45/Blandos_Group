@@ -18,7 +18,6 @@ body {
     max-width: 380px;
 }
 
-
 #view {
     background-color: #04090f;
     width: 100%;
@@ -85,4 +84,33 @@ input[type="button"]:not(.operator):not(.equals):hover {
 
 .zero-key {
     grid-column: span 2;
+}
+
+
+.members {
+    background-color: #161b22;
+    border: 3px solid #2f363d;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 20px;
+    margin-left: 70pxs;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    color: #c9d1d9;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 10px #2f363d;
+}
+
+.members h2 {
+    color: #ff7b72;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 8px rgba(255, 123, 114, 0.7);
+}
+
+.members p {
+    font-size: 1.2rem;
+    margin: 4px 0;
+    color: #58a6ff;
+    text-shadow: 0 0 5px rgba(88, 166, 255, 0.4);
 }
