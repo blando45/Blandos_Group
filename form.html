@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=", initial-scale=1.0">
+    <title>Simple Form</title>
+            
+</head>
+<body>
+    <div>
+<form id="regform">
+<input type="text" id="name" placeholder="Full Name">
+
+<input type="email" id="email" placeholder="Email Address">
+
+<input type="text" id="password" placeholder="password">
+
+
+<button type="button" onclick="validateForm()">Register</button>
+</form>
+</div>
+
+
+<script>
+function validateForm(){
+
+
+let name = document.getElementById("name").value.trim();
+let email = document.getElementById("email").value.trim();
+let password = document.getElementById("password").value.trim();
+
+if(name === "" || email === "" || password === ""){
+    alert("PALIHOG I INPUT ANG TANANG DAPAT I INPUT");
+    return;
+}
+
+if(email.indexOf("@") === -1 || email.indexOf(".") === -1){
+    alert("GODDAMN IT ENTER A VALID EMAIL");
+    return;
+}
+
+if(password.length < 6){
+    alert("password must be greater than 6 characters");
+    return;
+}
+
+alert("form submitted successfully");
+}
+</script>
+
+</body>
+</html>
